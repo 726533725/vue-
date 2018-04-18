@@ -11,6 +11,7 @@ import IndexHeader from './header'
 import IndexSwiper from './swiper'
 import IndexIcont from './icont'
 import axios from 'axios'
+
 export default {
   name: 'index',
   components: {
