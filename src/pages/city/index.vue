@@ -1,13 +1,22 @@
 <template>
-    <div>city</div>
+  <div class="body">
+	  <city-header></city-header>
+  
+	</div>
 </template>
 
 <script>
+  import CityHeader from './header'
+  
 export default {
-  name: 'city'
+    name: 'cityIndex',
+    components: {
+      CityHeader,
+  },
 }
 </script>
 
-<style>
-
+<style lang="stylus" scopde>
+	.body
+		overflow: hidden
 </style>

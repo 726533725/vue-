@@ -1,8 +1,10 @@
 <template>
   <div>
-    <index-header></index-header>
+    <index-header :city="city"></index-header>
     <index-swiper :list="swiperInfo"></index-swiper>
     <index-icont :list="icontInfo"></index-icont>
+    <index-iocat></index-iocat>
+    <index-seach></index-seach>
   </div>
 </template>
 
@@ -10,6 +12,8 @@
 import IndexHeader from './header'
 import IndexSwiper from './swiper'
 import IndexIcont from './icont'
+import IndexIocat from './iocat'
+import IndexSeach from './seach'
 import axios from 'axios'
 
 export default {
@@ -17,10 +21,13 @@ export default {
   components: {
     IndexHeader,
     IndexSwiper,
-    IndexIcont
+    IndexIcont,
+    IndexIocat,
+    IndexSeach
   },
   data () {
     return {
+      city: '',
       swiperInfo: [],
       icontInfo: []
     }
@@ -35,6 +42,8 @@ export default {
         const data = res.data.data
         this.swiperInfo = data.swipreList
         this. icontInfo = data.iconList
+        this.city = data.city
+       
     },
     handleGetDataErr () {
       console.log('error')

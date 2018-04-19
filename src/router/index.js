@@ -13,7 +13,8 @@ export default new Router({
     }, {
       path: '/city/:id',
       name: 'City',
-      component: City
+      component: City,
+      props: true
     }
   ]
 })
