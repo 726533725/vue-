@@ -5,6 +5,9 @@
     <index-icont :list="icontInfo"></index-icont>
     <index-iocat></index-iocat>
     <index-seach></index-seach>
+    <index-top :list=" topInfo"></index-top>
+    <index-like></index-like>
+    <index-list :list="listInfo"></index-list>
   </div>
 </template>
 
@@ -14,6 +17,9 @@ import IndexSwiper from './swiper'
 import IndexIcont from './icont'
 import IndexIocat from './iocat'
 import IndexSeach from './seach'
+import IndexTop from './top'
+import IndexLike from './like'
+import IndexList from './list'
 import axios from 'axios'
 
 export default {
@@ -23,13 +29,18 @@ export default {
     IndexSwiper,
     IndexIcont,
     IndexIocat,
-    IndexSeach
+    IndexSeach,
+    IndexTop,
+    IndexLike,
+    IndexList
   },
   data () {
     return {
       city: '',
       swiperInfo: [],
-      icontInfo: []
+      icontInfo: [],
+      topInfo: [],
+      listInfo: []
     }
   },
   methods:{
@@ -43,7 +54,8 @@ export default {
         this.swiperInfo = data.swipreList
         this. icontInfo = data.iconList
         this.city = data.city
-       
+        this.topInfo = data.topList
+        this.listInfo = data.likeList
     },
     handleGetDataErr () {
       console.log('error')
