@@ -1,51 +1,58 @@
 <template>
-    <div>index</div>
+  <div>
+    <index-header :city="city"></index-header>
+    <index-swiper :list="swiperInfo"></index-swiper>
+    <index-icont :list="icontInfo"></index-icont>
+    <index-iocat></index-iocat>
+    <index-seach></index-seach>
+  </div>
 </template>
 
 <script>
-// import IndexHeader from './header'
-// import IndexSwiper from './swiper'
+import IndexHeader from './header'
+import IndexSwiper from './swiper'
+import IndexIcont from './icont'
+import IndexIocat from './iocat'
+import IndexSeach from './seach'
 import axios from 'axios'
-export default{
+
+export default {
   name: 'index',
-  components:{
-    
+  components: {
+    IndexHeader,
+    IndexSwiper,
+    IndexIcont,
+    IndexIocat,
+    IndexSeach
   },
-  methods: {
-    getIndexData(){
-      axios.get('/api/index.json').then(this.handleGetDataSucc.bind(this)).catch(this.handleGetDataError.bind(this))
+  data () {
+    return {
+      city: '',
+      swiperInfo: [],
+      icontInfo: []
+    }
+  },
+  methods:{
+    getIndexData () {
+      axios.get('/api/index.json')
+        .then(this.handleGetDataSucc.bind(this))
+        .catch(this.handleGetDataErr.bind(this))
     },
-    handleGetDataSucc(res){
-      console.log(res)
+    handleGetDataSucc (res) {
+        const data = res.data.data
+        this.swiperInfo = data.swipreList
+        this. icontInfo = data.iconList
+        this.city = data.city
+       
     },
-    handleGetDataError(res){
+    handleGetDataErr () {
       console.log('error')
     }
   },
   created () {
-    this.getDayTripInfo();  
-  },
-  watch: {
-    '$route' (){
-      this.getDayTripInfo()
-    }
-  },
-  methods:{
-    getDayTripInfo(){
-      axios.get('/api/daytrip.json?id='+this.$route.params.id)
-      .then(this.handleGetDataSucc.bind(this))
-      .catch(this.handleGetDataError.bind(this))
-    },
-    handleGetDataSucc (res){
-      console.log(res)
-    },
-    handleGetDataError (){
-
-    }
+    this.getIndexData()
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
