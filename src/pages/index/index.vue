@@ -13,7 +13,7 @@ import IndexIcont from './icont'
 import axios from 'axios'
 export default {
   name: 'index',
-  components: {
+  components:{
     IndexHeader,
     IndexSwiper,
     IndexIcont
