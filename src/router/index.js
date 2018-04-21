@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/index'
 import City from '@/pages/city'
+import Detail from '@/pages/detail'
 Vue.use(Router)
 
 export default new Router({
@@ -15,6 +16,10 @@ export default new Router({
       name: 'City',
       component: City,
       props: true
+    },{
+      path: '/datail/:id',
+      name: 'Deta',
+      component: Detail
     }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="back iconfont">&#xe624;</div>
+        <div class="back iconfont"></div>
         <div class="search">
            <span class="iconfont search-icon">&#xe632;</span> 请输入城市
         </div>
