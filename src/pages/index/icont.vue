@@ -28,7 +28,7 @@ export default {
      }
     }
   },
-  computed: {
+computed: {
       pageList () {
           const pages = []
           this.list.forEach((value,index)=>{
@@ -40,7 +40,7 @@ export default {
           })
           return pages
       }
-  }
+  },
 }
 </script>
 

@@ -1,11 +1,10 @@
 <template>
     <div class="mp-group">
         <div class="mp-group-title">
-            <img class="mp-title-img" src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png">
-            <span class="mp-title">本周热门榜单</span>
-            <router-link to="/bar" class="mp-title-more">全部榜单</router-link>
-        </div>
-    </div> 
+            <img class="mp-title-img" src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png">
+            <span class="mp-title">猜你喜欢</span>
+           </div>
+    </div>
 </template>
 
 <script>
@@ -35,13 +34,5 @@ export default {
                 height: .44rem
                 color: #212121
                 font-size: .32rem
-                line-height: .44rem
-            .mp-title-more
-                position: absolute
-                top: .1rem
-                right: .4rem
-                color: #616161
-                font-size: .24rem
-                line-height: .28rem    
-           
+                line-height: .44rem           
 </style>

@@ -1,10 +1,13 @@
 <template>
   <div>
-    <index-header :city="city"></index-header>
+    <index-header :city="$store.state.city"></index-header>
     <index-swiper :list="swiperInfo"></index-swiper>
     <index-icont :list="icontInfo"></index-icont>
     <index-iocat></index-iocat>
     <index-seach></index-seach>
+    <index-top :list=" topInfo"></index-top>
+    <index-like></index-like>
+    <index-list :list="listInfo"></index-list>
   </div>
 </template>
 
@@ -14,6 +17,9 @@ import IndexSwiper from './swiper'
 import IndexIcont from './icont'
 import IndexIocat from './iocat'
 import IndexSeach from './seach'
+import IndexTop from './top'
+import IndexLike from './like'
+import IndexList from './list'
 import axios from 'axios'
 
 export default {
@@ -23,18 +29,23 @@ export default {
     IndexSwiper,
     IndexIcont,
     IndexIocat,
-    IndexSeach
+    IndexSeach,
+    IndexTop,
+    IndexLike,
+    IndexList
   },
   data () {
     return {
       city: '',
       swiperInfo: [],
-      icontInfo: []
+      icontInfo: [],
+      topInfo: [],
+      listInfo: []
     }
   },
-  methods:{
+  methods: {
     getIndexData () {
-      axios.get('/api/index.json?city=' + this.$store.state.city)
+      axios.get('/api/index.json')
         .then(this.handleGetDataSucc.bind(this))
         .catch(this.handleGetDataErr.bind(this))
     },
@@ -46,6 +57,8 @@ export default {
         if(!this.$store.state.city) {
           this.$store.commit('changeCity', data.city)
         }
+        this.topInfo = data.topList
+        this.listInfo = data.likeList
     },
     handleGetDataErr () {
       console.log('error')
@@ -54,6 +67,11 @@ export default {
   created () {
     this.getIndexData()
   },
+  watch : {
+    '$store.state.city' () {
+      this.getIndexData()
+    }
+  }
 }
 
 </script>
