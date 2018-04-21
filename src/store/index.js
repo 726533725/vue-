@@ -12,13 +12,13 @@ getters: {
     return state.city + state.city
   }
 },
-actions: {
-  changeCityDelayFiveSeconds(context, city) {
-    setTimeout(() => {
-      context.commit('changeCity', city)
-    }, 5000)
-  }
-},
+// actions: {
+//   changeCityDelayFiveSeconds(context, city) {
+//     setTimeout(() => {
+//       context.commit('changeCity', city)
+//     }, 5000)
+//   }
+// },
 mutations: {
   changeCity(state, city) {
     localStorage.city = city
