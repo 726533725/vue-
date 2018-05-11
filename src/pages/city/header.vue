@@ -60,4 +60,3 @@ export default {
 					line-height: .54rem
 					width: 2rem			
 </style>
-

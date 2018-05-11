@@ -16,10 +16,11 @@ export default new Router({
       name: 'City',
       component: City,
       props: true
-    },{
-      path: '/datail/:id',
-      name: 'Deta',
-      component: Detail
+    }, {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail,
+      props: true
     }
   ]
 })

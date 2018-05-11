@@ -1,7 +1,7 @@
 <template>
   <div class="sights">
       <ul class="sights-con">
-          <li class="mp-like-item" v-for="item of list" :key="item.id" @click="hendelListClick">
+          <li class="mp-like-item" v-for="item of list" :key="item.id" @click="hendleListClick">
               <div class="mp-like-imgcon">
                   <img  class="mp-like-img" :src="item.imgUrl" alt="">
                   <div class="mp-like-tag" :style="item.background">{{item.tag}}</div>
@@ -34,11 +34,11 @@ export default {
   props: {
       list:Array
   },
-  methode: {
-      hendelListClick () {
-          this.$router.push('/detail/234')
-      }
-  }
+   methods: {
+       hendleListClick () {
+            this.$router.push('/detail/234')
+       }
+   }
 }
 </script>
 
