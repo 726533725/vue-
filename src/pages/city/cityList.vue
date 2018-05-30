@@ -26,16 +26,6 @@
 		</div>
  	</div>
 </template>
-<script>
-  export default {
-    name: 'cityList',
-    props: {
-      hotCityInfo: Array,
-      domesticCityList: Array
-      }
-    }
-  
-</script>
 <style lang="stylus" scoped>
 	.area-title
 		background: #f5f5f5
@@ -97,11 +87,6 @@
       city: String
     },
     methods: {
-      handleCityClickChange (e) {
-        const city = e.target.innerHTML
-        this.$bus.$emit('change', city)
-        this.$router.go(-1)
-      },
       handleCityClickRolling (e) {
         this.target = e.target
         const name = this.target.innerHTML
