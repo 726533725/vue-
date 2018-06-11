@@ -48,7 +48,7 @@
       },
       handleShowCity (e) {
         this.showCity = []
-        var cityListLength = this.domesticCityList.length
+        var cityListLength = this.domesticCityList.lengt
         if (e) {
           var reg = /^[\u4e00-\u9fa5]+$/
           if (reg.test(e)) {
@@ -69,7 +69,7 @@
               var englishCityList = this.domesticCityList[k][1]
               var englishCityLength = englishCityList.length
               for (var l = 0; l < englishCityLength; l++) {
-                var obj = englishCityList[l]
+                var obj = englishCityList[1]
                 if (obj.itemName.indexOf(e) !== -1) {
                   this.showCity.push(obj.cityarea)
                 }
