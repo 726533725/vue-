@@ -50,6 +50,7 @@ export default {
         .catch(this.handleGetDataErr.bind(this))
     },
     handleGetDataSucc (res) {
+      console.log(res)
         const data = res.data.data
         this.swiperInfo = data.swipreList
         this. icontInfo = data.iconList

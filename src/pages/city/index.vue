@@ -39,6 +39,7 @@
       },
       handleGetDataSucc (res) {
         const data = res.data.data
+        console.log(res.data.data)
         this.hotCityInfo = data.hotcity
         this.domesticCityList = data.china
       },
